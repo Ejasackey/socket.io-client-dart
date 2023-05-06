@@ -10,7 +10,6 @@
 ///
 /// Copyright (C) 2017 Potix Corporation. All Rights Reserved.
 ///
-import 'package:logging/logging.dart';
 
 library socket_io_client;
 
@@ -69,6 +68,5 @@ Socket _lookup(uri, opts) {
   } else if (opts != null && opts['query'] is Map) {
     opts['query'] = encode(opts['query']);
   }
-  log(parsed.path);
   return io.socket(parsed.path.isEmpty ? '/' : parsed.path, opts);
 }
