@@ -47,7 +47,7 @@ Socket _lookup(uri, opts) {
   opts = opts ?? <dynamic, dynamic>{};
 
   var parsed = Uri.parse(uri);
-  var id = '${parsed.scheme}://${parsed.host}:${parsed.port}';
+  var id = '${parsed.scheme}://${parsed.host}'; // removed port number (parsed.port)
   var path = parsed.path;
   var sameNamespace = cache.containsKey(id) && cache[id].nsps.containsKey(path);
   var newConnection = opts['forceNew'] == true ||
