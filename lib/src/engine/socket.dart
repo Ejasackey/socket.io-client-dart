@@ -73,7 +73,7 @@ class Socket extends EventEmitter {
       this.uri = Uri.parse(uri);
       opts['hostname'] = this.uri.host;
       opts['secure'] = this.uri.scheme == 'https' || this.uri.scheme == 'wss';
-      opts['port'] = this.uri.port;
+      if (this.uri.hasPort) opts['port'] = this.uri.port;
       if (this.uri.hasQuery) opts['query'] = this.uri.query;
     } else if (opts.containsKey('host')) {
       opts['hostname'] = Uri.parse(opts['host']).host;
