@@ -83,7 +83,7 @@ class Socket extends EventEmitter {
 
     if (opts['hostname'] != null && !opts.containsKey('port')) {
       // if no port is specified manually, use the protocol default
-      opts['port'] = secure ? '443' : '80';
+      opts['port'] = secure ? 443 : 80;
     }
 
     agent = opts['agent'] ?? false;
