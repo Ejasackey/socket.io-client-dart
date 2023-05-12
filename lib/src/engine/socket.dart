@@ -34,7 +34,7 @@ class Socket extends EventEmitter {
   late bool secure;
   bool? agent;
   late String hostname;
-  int? port;
+  // int? port;
   late Map query;
   bool? upgrade;
   late String path;
@@ -89,12 +89,11 @@ class Socket extends EventEmitter {
     agent = opts['agent'] ?? false;
     hostname =
         opts['hostname'] /*?? (window.location.hostname ?? 'localhost')*/;
-    port = opts[
-            'port'] /*??
-        (window.location.port.isNotEmpty
-            ? int.parse(window.location.port)
-            : (this.secure ? 443 : 80))*/
-        ;
+    // port = opts['port'] /*?? // commented this line
+    //     (window.location.port.isNotEmpty
+    //         ? int.parse(window.location.port)
+    //         : (this.secure ? 443 : 80))*/
+    //     ;
     var query = opts['query'] ?? {};
     if (query is String) {
       this.query = decode(query);
@@ -206,7 +205,7 @@ class Socket extends EventEmitter {
       'socket': this,
       'agent': options['agent'] ?? agent,
       'hostname': options['hostname'] ?? hostname,
-      'port': options['port'] ?? port,
+      // 'port': options['port'] ?? port, // commented this portion
       'secure': options['secure'] ?? secure,
       'path': options['path'] ?? path,
       'forceJSONP': options['forceJSONP'] ?? forceJSONP,

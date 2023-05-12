@@ -226,7 +226,7 @@ abstract class PollingTransport extends Transport {
     return schema +
         '://' +
         (ipv6 ? '[' + hostname + ']' : hostname) +
-        port +
+        // port + // removed port
         path +
         queryString;
   }
