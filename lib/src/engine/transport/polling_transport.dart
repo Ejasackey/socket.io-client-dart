@@ -225,7 +225,7 @@ abstract class PollingTransport extends Transport {
     var ipv6 = hostname.contains(':');
     return schema +
         '://' +
-        (ipv6 ? '[' + hostname + ']' : hostname) +
+        (ipv6 ? '[' + hostname + ']' : hostname) + ":443" +
         // port + // removed port
         path +
         queryString;
