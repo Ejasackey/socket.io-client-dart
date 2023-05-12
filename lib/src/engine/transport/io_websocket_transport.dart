@@ -128,14 +128,14 @@ class IOWebSocketTransport extends Transport {
   String uri() {
     var query = this.query ?? {};
     var schema = secure == true ? 'wss' : 'ws';
-    var port = '';
+    // var port = '';
 
-    // avoid port if default for schema
-    if (this.port != null &&
-        (('wss' == schema && this.port != 443) ||
-            ('ws' == schema && this.port != 80))) {
-      port = ':${this.port}';
-    }
+    // // avoid port if default for schema
+    // if (this.port != null &&
+    //     (('wss' == schema && this.port != 443) ||
+    //         ('ws' == schema && this.port != 80))) {
+    //   port = ':${this.port}';
+    // }
 
     // append timestamp to URI
     if (timestampRequests == true) {

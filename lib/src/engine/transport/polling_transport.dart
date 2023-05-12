@@ -196,7 +196,7 @@ abstract class PollingTransport extends Transport {
   String uri() {
     var query = this.query ?? {};
     var schema = secure ? 'https' : 'http';
-    var port = '';
+    // var port = '';
 
     // cache busting is forced
     if (timestampRequests != false) {
@@ -209,11 +209,11 @@ abstract class PollingTransport extends Transport {
     }
 
     // avoid port if default for schema
-    if (this.port != null &&
-        (('https' == schema && this.port != 443) ||
-            ('http' == schema && this.port != 80))) {
-      port = ':${this.port}';
-    }
+    // if (this.port != null &&
+    //     (('https' == schema && this.port != 443) ||
+    //         ('http' == schema && this.port != 80))) {
+    //   port = ':${this.port}';
+    // }
 
     var queryString = encode(query);
 

@@ -11,7 +11,7 @@ abstract class Transport extends EventEmitter {
 
   late String path;
   late String hostname;
-  int? port;
+  // int? port;
   late bool secure;
   Map? query;
   String? timestampParam;
@@ -27,7 +27,7 @@ abstract class Transport extends EventEmitter {
   Transport(Map opts) {
     path = opts['path'];
     hostname = opts['hostname'];
-    port = opts['port'];
+    // port = opts['port'];
     secure = opts['secure'];
     query = opts['query'];
     timestampParam = opts['timestampParam'];
